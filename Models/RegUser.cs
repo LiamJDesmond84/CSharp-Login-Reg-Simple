@@ -6,18 +6,18 @@ namespace CSharp_Login_Reg_Simple.Models
     {
         [Required]
         [MinLength(1)]
-        private string FirstName;
+        public string FirstName { get; set; }
 
         [Required]
         [MinLength(1)]
-        private string LastName;
+        public string LastName { get; set; }
 
         [Required]
         [MinLength(3)]
-        private string Password;
+        public string Password { get; set; }
 
         [EmailAddress]
-        private string Email;
+        public string Email { get; set; }
 
     }
 }
