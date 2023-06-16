@@ -1,1 +1,9 @@
-﻿
+﻿@model LogUser
+
+<form action="login" method="post">
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <button type="submit">Login</button>
+    </div>
+</form>
