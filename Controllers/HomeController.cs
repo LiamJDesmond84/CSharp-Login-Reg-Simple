@@ -41,4 +41,17 @@ public class HomeController : Controller
             return View("Index");
         }
     }
+
+    public IActionResult Login(LogUser logUser)
+    {
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction("SuccessPage");
+        }
+
+        else
+        {
+            return View("Index");
+        }
+    }
 }
