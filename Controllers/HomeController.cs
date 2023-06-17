@@ -54,4 +54,9 @@ public class HomeController : Controller
             return View("Index");
         }
     }
+
+    public IActionResult SuccessPage()
+    {
+        return View();
+    }
 }

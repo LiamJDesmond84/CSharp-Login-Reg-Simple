@@ -1,5 +1,5 @@
 ﻿@model RegUser
-<form asp-action="RegisterUser" method="post">
+<form asp-controller="Home" asp-action="RegisterUser" method="post">
     <div class="form-group">
         <label asp-for="FirstName">First Name</label>
         <input asp-for="FirstName" class="form-control" />

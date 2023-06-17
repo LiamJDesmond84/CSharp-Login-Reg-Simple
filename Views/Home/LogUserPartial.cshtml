@@ -1,6 +1,6 @@
 ﻿@model LogUser
 
-<form asp-action="Login" method="post">
+<form asp-controller="Home" asp-action="Login" method="post">
     <div class="form-group">
         <label asp-for="Email">Email</label>
         <input asp-for="Email" class="form-control" />
