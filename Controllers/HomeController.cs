@@ -28,4 +28,17 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    public IActionResult RegisterUser(RegUser regUser)
+    {
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction("SuccessPage");
+        }
+
+        else
+        {
+            return View("Index");
+        }
+    }
 }
