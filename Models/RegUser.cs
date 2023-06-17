@@ -12,12 +12,16 @@ namespace CSharp_Login_Reg_Simple.Models
         [MinLength(1)]
         public string LastName { get; set; }
 
-        [Required]
-        [MinLength(3)]
-        public string Password { get; set; }
 
         [EmailAddress]
         public string Email { get; set; }
 
+        [Required]
+        [MinLength(3)]
+        public string Password { get; set; }
+
+        [Compare("Password", ErrorMessage = "Passwords must match, Try again !")]
+        [Required]
+        public string ConfirmPassword { get; set; }
     }
 }
