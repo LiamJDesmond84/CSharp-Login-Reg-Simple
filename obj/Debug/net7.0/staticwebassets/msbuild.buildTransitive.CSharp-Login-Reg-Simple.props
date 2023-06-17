@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CSharp-Login-Reg-Simple.props" />
+</Project>
