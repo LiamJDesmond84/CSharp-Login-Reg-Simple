@@ -5,11 +5,11 @@ namespace CSharp_Login_Reg_Simple.Models
     public class RegUser
     {
         [Required]
-        [MinLength(1)]
+        [MinLength(2)]
         public string FirstName { get; set; }
 
         [Required]
-        [MinLength(1)]
+        [MinLength(2)]
         public string LastName { get; set; }
 
 
