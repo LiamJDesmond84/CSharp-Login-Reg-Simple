@@ -1,13 +1,15 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="~/css/site.css" />
 
 <div class="text-center">
     <partial name="NavPartial" />
     <h1>Welcome to this site!</h1>
 </div>
 
-<div>
+<div class="form-container">
     <partial name="RegUserPartial" />
+
     <partial name="LogUserPartial" />
 </div>
