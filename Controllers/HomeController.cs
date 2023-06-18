@@ -34,7 +34,8 @@ public class HomeController : Controller
 
     {
         var postedValues = HttpContext.Request.Query["other"].ToString();
-        HttpContext.Session.SetString("User", postedValues);
+        HttpContext.Session.SetString("OtherUser", postedValues);
+
         if (ModelState.IsValid)
         {
             return RedirectToAction("SuccessPage");
@@ -61,6 +62,8 @@ public class HomeController : Controller
 
     public IActionResult SuccessPage()
     {
-        return View();
+        string LocalVariable = HttpContext.Session.GetString("OtherUser");
+
+        return View(LocalVariable);
     }
 }
