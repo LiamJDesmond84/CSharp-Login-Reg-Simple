@@ -22,6 +22,8 @@ body {
 }
 
 .form-container {
-    display: inline-block;
+    display: flex;
     vertical-align: top;
+   justify-content: space-around;
+
 }
