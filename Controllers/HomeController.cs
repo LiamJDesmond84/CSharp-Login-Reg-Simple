@@ -30,9 +30,11 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult RegisterUser(RegUser regUser, string other)
+    public IActionResult RegisterUser(RegUser regUser)
+
     {
-        HttpContext.Session.SetString("User", other);
+        var postedValues = HttpContext.Request.Query["other"].ToString();
+        HttpContext.Session.SetString("User", postedValues);
         if (ModelState.IsValid)
         {
             return RedirectToAction("SuccessPage");
