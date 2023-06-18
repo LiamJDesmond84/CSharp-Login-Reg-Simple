@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CSharp_Login_Reg_Simple.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace CSharp_Login_Reg_Simple.Controllers;
 
@@ -29,8 +30,9 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult RegisterUser(RegUser regUser)
+    public IActionResult RegisterUser(RegUser regUser, string other)
     {
+        HttpContext.Session.SetString("User", other);
         if (ModelState.IsValid)
         {
             return RedirectToAction("SuccessPage");
