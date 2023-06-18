@@ -33,7 +33,7 @@ public class HomeController : Controller
     public IActionResult RegisterUser(RegUser regUser)
 
     {
-        var postedValues = HttpContext.Request.Query["other"].ToString();
+        var postedValues = HttpContext.Request.Query["OtherUser"].ToString();
         HttpContext.Session.SetString("OtherUser", postedValues);
 
         if (ModelState.IsValid)
@@ -62,7 +62,7 @@ public class HomeController : Controller
 
     public IActionResult SuccessPage()
     {
-        string LocalVariable = HttpContext.Session.GetString("OtherUser");
+        ViewBag.OtherUser = HttpContext.Session.GetString("OtherUser");
 
         return View(LocalVariable);
     }
