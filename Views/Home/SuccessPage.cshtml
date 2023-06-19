@@ -1,6 +1,16 @@
-﻿<div class="text-center">
+﻿@model RegUser
+
+<div class="text-center">
     <partial name="NavPartial" />
     <h1>Welcome to this site!</h1>
 </div>
 
 <h2 style="color: forestgreen">SUCCESS... Also @ViewBag.OtherUser</h2>
+<h3>From Session</h3>
+<ol>
+    <li>
+        @Model.FirstName
+        @Model.LastName
+        ETCETERA
+    </li>
+</ol>
