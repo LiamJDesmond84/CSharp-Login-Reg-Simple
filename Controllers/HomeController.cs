@@ -42,7 +42,7 @@ public class HomeController : Controller
 
 
 
-        HttpContext.Session.SetObjectAsJson("User", regUser);
+        HttpContext.Session.SetObjectAsJson("SessionUser", regUser);
 
         
 
@@ -78,9 +78,11 @@ public class HomeController : Controller
 
     public IActionResult SuccessPage()
     {
+        RegUser RetrievedUser = HttpContext.Session.GetObjectFromJson<RegUser>("SessionUser");
+
         ViewBag.OtherUser = HttpContext.Session.GetString("OtherUser");
 
-        return View();
+        return View(RetrievedUser);
     }
 
 
