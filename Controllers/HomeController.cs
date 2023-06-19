@@ -31,8 +31,19 @@ public class HomeController : Controller
     }
 
     public IActionResult RegisterUser(RegUser regUser)
-
     {
+
+        // USING EXTENSION METHOD FROM SessionExtensions Utility Class
+        List<object> NewList = new List<object>();
+
+        HttpContext.Session.SetObjectAsJson("TheList", NewList);
+
+        // Notice that we specify the type ( List ) on retrieval
+        List<object> Retrieve = HttpContext.Session.GetObjectFromJson<List<object>>("TheList");
+
+
+
+
         var postedValues = HttpContext.Request.Form["OtherUser"].ToString();
         HttpContext.Session.SetString("OtherUser", postedValues);
 
