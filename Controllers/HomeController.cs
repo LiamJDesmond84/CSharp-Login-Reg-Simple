@@ -41,7 +41,7 @@ public class HomeController : Controller
         //      List<object> Retrieve = HttpContext.Session.GetObjectFromJson<List<object>>("TheList");
 
 
-
+        // USING EXTENSION METHOD FROM SessionExtensions Utility Class
         HttpContext.Session.SetObjectAsJson("SessionUser", regUser);
 
         
@@ -78,6 +78,7 @@ public class HomeController : Controller
 
     public IActionResult SuccessPage()
     {
+        // USING EXTENSION METHOD FROM SessionExtensions Utility Class
         RegUser RetrievedUser = HttpContext.Session.GetObjectFromJson<RegUser>("SessionUser");
 
         ViewBag.OtherUser = HttpContext.Session.GetString("OtherUser");

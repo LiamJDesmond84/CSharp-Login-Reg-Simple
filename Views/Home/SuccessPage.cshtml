@@ -5,12 +5,14 @@
     <h1>Welcome to this site!</h1>
 </div>
 
-<h2 style="color: forestgreen">SUCCESS... Also @ViewBag.OtherUser</h2>
-<h3>From Session</h3>
+<h2 style="color: forestgreen">SUCCESS... Also....</h2>
+<h3>Passing a string from Session using ViewBag</h3>
 <ol>
-    <li>
-        @Model.FirstName
-        @Model.LastName
-        ETCETERA
-    </li>
+    <li> @ViewBag.OtherUser</li>
+</ol>
+<h3>Passing a Model from Session</h3>
+<ol>
+    <li>@Model.FirstName</li>
+    <li>@Model.LastName</li>
+    <li>ETCETERA</li>
 </ol>
