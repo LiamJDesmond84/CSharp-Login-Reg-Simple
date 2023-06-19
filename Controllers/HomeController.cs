@@ -34,9 +34,11 @@ public class HomeController : Controller
     {
 
         // USING EXTENSION METHOD FROM SessionExtensions Utility Class
-        List<object> NewList = new List<object>();
+        //List<object> NewList = new List<object>();
 
-        HttpContext.Session.SetObjectAsJson("TheList", NewList);
+        //HttpContext.Session.SetObjectAsJson("TheList", NewList);
+
+        HttpContext.Session.SetObjectAsJson("User", regUser);
 
         // Notice that we specify the type ( List ) on retrieval
         List<object> Retrieve = HttpContext.Session.GetObjectFromJson<List<object>>("TheList");
