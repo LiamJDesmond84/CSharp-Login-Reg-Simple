@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 namespace CSharp_Login_Reg_Simple.Models
 
 {
-    public class SessionExtensions
+    public static class SessionExtensions
     {
         // We can call ".SetObjectAsJson" just like our other session set methods, by passing a key and a value
         public static void SetObjectAsJson(this ISession session, string key, object value)
